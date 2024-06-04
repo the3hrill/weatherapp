@@ -1,3 +1,81 @@
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.weather-card {
+  display: flex;
+  justify-content: space-between;
+}
+.expanded {
+  transform: scale(1.2);
+}
+
+.weather-card-main {
+  width: 400px !important;
+  border: 5px solid transparent lightskyblue !important;
+  border-radius: 70px !important;
+  padding: 20px !important;
+  opacity: 0.9 !important;
+}
+
+.weather-card-child {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.main-icon {
+  width: 50px;
+  height: 50px;
+}
+.icon-container {
+  position: relative;
+  right: -65px;
+}
+
+.app-header {
+  font-size: 25px;
+  margin: 20px;
+  font-family: Palantino, Georgia, serif;
+}
+
+.forecast-header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px !important;
+}
+
+.card-group {
+  border-radius: 70px !important;
+  border: 5px solid transparent lightskyblue !important;
+  width: 570px !important;
+}
+
+.card-group {
+  transition: right 0.5s;
+  bottom: 100%;
+
+  display: none;
+}
+
+.card-group.active {
+  display: block;
+}
+
+.forecast-main-card {
+  transition: border 0.5s;
+}
+
+.forecast-main-card:hover {
+  transform: scale(1.1);
+}
+
+.forecast-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +83,11 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.temp-description {
+  text-transform: capitalize;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px !important;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,6 +109,28 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.forecast-icon {
+  width: 20px;
+  height: 20px;
+}
+.forecast-main {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.temp-description {
+  padding: -5px !important;
+}
+
+.forecast-button {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
