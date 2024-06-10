@@ -4,6 +4,14 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import WeatherCard from './components/WeatherCard';
 import Forecast from './components/Forecast';
+import hazysky from './components/hazysky.jpg';
+import clearsky from './components/clearsky.jpg';
+import cloudysky from './components/cloudysky.jpg';
+import rainsky from './components/rainysky.jpg';
+import snowsky from './components/snowsky.jpg';
+import thunderstormsky from './components/thunderstormsky.jpg';
+import cloudynightsky from './components/cloudynightsky.jpg';
+import nightsky from './components/nightsky.jpg';
 
 import { Loader } from 'semantic-ui-react';
 
@@ -11,7 +19,7 @@ const URL = `https://api.openweathermap.org/data/3.0/onecall`;
 const API_KEY = `8c7fbcce7cff51d4803f93a9321fb947`.trim();
 const iconColors = {
   Clouds: 'rgba(128,128,128,0.5)',
-  Clear: 'rgba(255,255,0,0.9)',
+  Clear: 'lightblue',
   Rain: 'blue',
   Drizzle: 'blue',
   Thunderstorm: 'purple',
@@ -22,6 +30,21 @@ const iconColors = {
   Night: 'black',
   'Clouds Night': 'grey',
   'Clouds Night Rain': 'grey',
+};
+
+const weatherImages = {
+  Clouds: cloudysky,
+  Clear: clearsky,
+  Rain: rainsky,
+  Drizzle: rainsky,
+  Thunderstorm: thunderstormsky,
+  Snow: snowsky,
+  Mist: hazysky,
+  Smoke: hazysky,
+  Haze: hazysky,
+  Night: nightsky,
+  'Clouds Night': cloudynightsky,
+  'Clouds Night Rain': rainsky,
 };
 
 function App() {
@@ -49,6 +72,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const backgroundColor = iconColors[icon];
+  const backgroundImage = weatherImages[icon];
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -80,7 +104,13 @@ function App() {
     }
   }, [latitude, longitude]);
   return (
-    <div className="main" style={{ backgroundColor: 'lightblue' }}>
+    <div
+      className="main"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        height: isForecastHidden ? 'block' : 'block',
+      }}
+    >
       <Header />
       {loading ? (
         <Loader active inline="centered" />
@@ -96,7 +126,11 @@ function App() {
         />
       )}
 
-      <Forecast forecast={forecast} backgroundColor={backgroundColor} />
+      <Forecast
+        forecast={forecast}
+        backgroundColor={backgroundColor}
+        style={{ display: isForecastHidden ? 'none' : 'block' }}
+      />
     </div>
   );
 }

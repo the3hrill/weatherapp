@@ -5,7 +5,6 @@ import {
   Card,
   CardContent,
   CardHeader,
-  CardMeta,
   CardDescription,
 } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -48,7 +47,7 @@ function Forecast({ forecast, backgroundColor, icon }) {
 
   const forecastColors = {
     Clouds: 'rgba(128,128,128,0.5)',
-    Clear: 'rgba(255,255,0,0.9)',
+    Clear: 'lightblue',
     Rain: 'blue',
     Drizzle: 'blue',
     Thunderstorm: 'purple',
@@ -64,7 +63,7 @@ function Forecast({ forecast, backgroundColor, icon }) {
 
   const weatherIconColors = {
     Clouds: 'rgba(80,80,80,0.5)',
-    Clear: 'rgba(255,165,0,1)',
+    Clear: 'yellow',
     Rain: 'blue',
     Drizzle: 'blue',
     Thunderstorm: 'rgba(80, 0, 80, 1)', // darker purple

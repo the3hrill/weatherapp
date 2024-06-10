@@ -13,7 +13,6 @@ import { faSun } from '@fortawesome/free-solid-svg-icons';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import { faCloudMoon } from '@fortawesome/free-solid-svg-icons';
 import { faCloudMoonRain } from '@fortawesome/free-solid-svg-icons';
-import { MdHeight } from 'react-icons/md';
 
 function WeatherCard({
   temperature,
@@ -51,7 +50,7 @@ function WeatherCard({
   }
   const weatherIconColors = {
     Clouds: 'rgba(80,80,80,0.5)',
-    Clear: 'rgba(255,165,0,1)',
+    Clear: 'yellow',
     Rain: 'blue',
     Drizzle: 'blue',
     Thunderstorm: 'rgba(80, 0, 80, 1)', // darker purple

@@ -64,6 +64,7 @@
 
 .forecast-main-card {
   transition: border 0.5s;
+  background: linear-gradient(white, black);
 }
 
 .forecast-main-card:hover {
